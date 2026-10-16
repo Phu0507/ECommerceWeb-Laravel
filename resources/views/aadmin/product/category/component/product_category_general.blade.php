@@ -1,0 +1,38 @@
+<div class="row mb15">
+    <div class="col-lg-12">
+        <div class="form-row">
+            <label class="control-label">Danh mục<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="name" placeholder="Nhập danh mục"
+                value="{{ old('name') ?? (isset($categoryOptions) ? $categoryOptions->product_category_language->first()?->name ?? '' : '') }}">
+
+        </div>
+    </div>
+</div>
+<div class="row mb15">
+    <div class="col-lg-12">
+        <div class="form-row">
+            <label class="control-label">Mô tả ngắn<span class="text-danger">*</span></label>
+            <textarea id="description1" class="form-control summernote" name="description" placeholder="Nhập mô tả ngắn">
+                {{ old('description') ?? (isset($categoryOptions) ? $categoryOptions->product_category_language->first()?->description ?? '' : '') }}
+            </textarea>
+        </div>
+    </div>
+</div>
+<div class="row mb15">
+    <div class="col-lg-12">
+        <div class="form-row">
+            <label style="padding-top: 20px" class="control-label">Nội dung<span class="text-danger">*</span></label>
+            <textarea id="content1" class="form-control summernote" name="content" placeholder="Nhập nội dung">
+                {{ old('content') ?? (isset($categoryOptions) ? $categoryOptions->product_category_language->first()?->content ?? '' : '') }}
+</textarea>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            height: 200, // chiều cao editor
+            tabsize: 2
+        });
+    });
+</script>

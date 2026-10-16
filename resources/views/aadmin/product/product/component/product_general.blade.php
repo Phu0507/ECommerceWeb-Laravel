@@ -1,0 +1,28 @@
+<div class="row mb15">
+    <div class="col-lg-12">
+        <div class="form-row">
+            <label class="control-label">Tên sản phẩm<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="name" placeholder="Nhập tên sản phẩm"
+                value="{{ old('name') ?? (isset($categoryOptions) ? $categoryOptions['name'] ?? '' : '') }}">
+
+        </div>
+    </div>
+</div>
+<div class="row mb15">
+    <div class="col-lg-12">
+        <div class="form-row">
+            <label class="control-label">Mô tả ngắn<span class="text-danger">*</span></label>
+            <textarea id="description1" class="form-control summernote" name="description" placeholder="Nhập mô tả ngắn">
+                {{ old('description') ?? (isset($categoryOptions) ? $categoryOptions['description'] ?? '' : '') }}
+            </textarea>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $('.summernote').summernote({
+            height: 200, // chiều cao editor
+            tabsize: 2
+        });
+    });
+</script>
